@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  // display current date on page
+  $("#currentDay").text(moment().format("dddd, MMMM Do"));
+
   // listen for save button clicks
 
   $(".saveBtn").on("click", function() {
@@ -21,19 +24,16 @@ $(document).ready(function() {
     // loop over time blocks
     $(".time-block").each(function() { //runs the function for each time block 9am - 5pm
       var blockHour = parseInt($(this).attr("id").split("-")[1]);
-      var textArea = $("textarea");
-      
-
 
       console.log("block hour:", blockHour);
 
       // check if we've moved past this time
       if (currentHour > blockHour) {
-        $(".time-block").addClass('past'); //if current time is greater than the time in the block, the text area turns gray
+        $(this).addClass('past'); //if current time is greater than the time in the block, the text area turns gray
       } else if (currentHour === blockHour) {
-        $(".time-block").addClass('present'); //if current time is the same as the time in the block, the text area turns red
+        $(this).addClass('present'); //if current time is the same as the time in the block, the text area turns red
         } else {
-          $(".time-block").addClass('future'); //if the current time is less than the block, the text turns red
+          $(this).addClass('future'); //if the current time is less than the block, the text turns red
         };
       })
     };
@@ -50,7 +50,7 @@ $(document).ready(function() {
   );
 
   // load any saved data from localStorage
-  
-  // display current day on page
-  $("#currentDay").text(moment().format("dddd, MMMM Do"));
+  let getData = JSON.parse(localStorage.getItem(value));
+
+
 
