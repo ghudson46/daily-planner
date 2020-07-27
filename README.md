@@ -25,7 +25,6 @@ THEN the saved events persist
 [App Link](https://ghudson46.github.io/daily-planner/)
 [Github Link](https://github.com/ghudson46/daily-planner)
 
-![image]()
 
 ### Code
 an event listener listens for save button clicks and stores the inputed value and time into variables that are saved on local storage.
@@ -35,10 +34,9 @@ an event listener listens for save button clicks and stores the inputed value an
 
 in the hourUpdater function, the current time is stored, time block hours are turned into integers and a loop is created to check whether or not a time block is in the past, present or future, calling on or removing classes to display the appropriate colors. User input which has been saved is pulled to display inside the time blocks. 
 
-![image]()
-![image]()
 
-Lastyl, I made an interval function that is a timer that executes the hourUpdater function every 15 seconds so that the time check is kept up to date. 
+
+Lastly, I made an interval function that is a timer that executes the hourUpdater function every 15 seconds so that the time check is kept up to date. 
 
 
 
