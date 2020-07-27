@@ -25,7 +25,7 @@ THEN the saved events persist
 [App Link](https://ghudson46.github.io/daily-planner/)
 [Github Link](https://github.com/ghudson46/daily-planner)
 
-[!image](https://user-images.githubusercontent.com/63625541/88508403-bc60b380-cfac-11ea-8705-af0b61eb2366.png)
+![page image](https://user-images.githubusercontent.com/63625541/88508403-bc60b380-cfac-11ea-8705-af0b61eb2366.png)
 
 ### Code
 an event listener listens for save button clicks and stores the inputed value and time into variables that are saved on local storage.
