@@ -29,8 +29,7 @@ THEN the saved events persist
 ### Code
 an event listener listens for save button clicks and stores the inputed value and time into variables that are saved on local storage.
 
-![image clickListen](https://user-images.githubusercontent.com/66426144/88464825-d3f44b00-ce8b-11ea-865e-259e2decdb7e.png)
-![image storage](https://user-images.githubusercontent.com/66426144/88465108-26366b80-ce8e-11ea-9012-946ae4bab8b6.png)
+
 
 in the hourUpdater function, the current time is stored, time block hours are turned into integers and a loop is created to check whether or not a time block is in the past, present or future, calling on or removing classes to display the appropriate colors. User input which has been saved is pulled to display inside the time blocks. 
 
