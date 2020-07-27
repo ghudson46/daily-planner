@@ -30,6 +30,10 @@ THEN the saved events persist
 ### Code
 an event listener listens for save button clicks and stores the inputed value and time into variables that are saved on local storage.
 
+![save button](https://user-images.githubusercontent.com/63625541/88508420-c5518500-cfac-11ea-8feb-2a62f561e527.png)
+![input](https://user-images.githubusercontent.com/63625541/88508408-bff43a80-cfac-11ea-877a-5163291cc268.png)
+![local storage](https://user-images.githubusercontent.com/63625541/88508411-c2569480-cfac-11ea-8d56-627dd3e1bbbc.png)
+
 
 
 in the hourUpdater function, the current time is stored, time block hours are turned into integers and a loop is created to check whether or not a time block is in the past, present or future, calling on or removing classes to display the appropriate colors. User input which has been saved is pulled to display inside the time blocks. 
@@ -38,6 +42,7 @@ in the hourUpdater function, the current time is stored, time block hours are tu
 
 Lastly, I made an interval function that is a timer that executes the hourUpdater function every 15 seconds so that the time check is kept up to date. 
 
+![code remaiinder](https://user-images.githubusercontent.com/63625541/88508427-c71b4880-cfac-11ea-8e87-14799f33ef71.png)
 
 
 
