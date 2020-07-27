@@ -1,7 +1,8 @@
 $(document).ready(function() {
-  // display current date on page
-  $("#currentDay").text(moment().format("dddd, MMMM Do"));
 
+   // display current date on page
+   $("#currentDay").text(moment().format("dddd, MMMM Do"));
+  
   // listen for save button clicks
 
   $(".saveBtn").on("click", function() {
@@ -13,7 +14,7 @@ $(document).ready(function() {
     console.log('time:', time);
 
     // save the value in localStorage as time
-    localStorage.setItem(value, time); //stores the value and time in the local storage
+    localStorage.setItem(time, JSON.stringify(value)); //stores the value and time in the local storage
   });
 
   function hourUpdater() {
@@ -27,30 +28,39 @@ $(document).ready(function() {
 
       console.log("block hour:", blockHour);
 
+      var id = $(this).attr("id");
+
+      //load from local storage
+      var savedData = JSON.parse(localStorage.getItem(id));
+
+      if (savedData != null) {
+        $(this).children(".description").val(savedData);
+      }
+
       // check if we've moved past this time
       if (currentHour > blockHour) {
         $(this).addClass('past'); //if current time is greater than the time in the block, the text area turns gray
-      } else if (currentHour === blockHour) {
+      } else if (currentHour == blockHour) {
+        $(this).removeClass('past'); //remove past class
         $(this).addClass('present'); //if current time is the same as the time in the block, the text area turns red
         } else {
+          $(this).removeClass('past');//remove past class
+          $(this).removeClass('preset'); //remove present class
           $(this).addClass('future'); //if the current time is less than the block, the text turns red
         };
-      })
-    };
-    hourUpdater();
-  })
-
-  
+      });
+    }
 
   // set up interval to check if current time needs to be updated
   // which means execute hourUpdater function every 15 seconds
-  setInterval(function() {
+  function interval() {
+    setTimeout(interval, 1000*15);
     hourUpdater();
-  }, 1500
-  );
+  }
+  interval();
 
-  // load any saved data from localStorage
-  let getData = JSON.parse(localStorage.getItem(value));
+});
+  
 
 
 
