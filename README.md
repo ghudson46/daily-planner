@@ -1,20 +1,11 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Daily Planner
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Objective 
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
-
-## User Story
-
-```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+create a work day scheduler with color coded input boxes that hold time blocks. The scheduler must also save scheduled events to the local storage
 
 ## Acceptance Criteria
 
-```
 GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
@@ -28,19 +19,33 @@ WHEN I click the save button for that timeblock
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
-```
 
-The following animation demonstrates the application functionality:
 
-![day planner demo](./assets/05-third-party-apis-homework-demo.gif)
+## links
+[App Link](https://ghudson46.github.io/daily-planner/)
+[Github Link](https://github.com/ghudson46/daily-planner)
 
-## Review
+![image]()
 
-You are required to submit the following for review:
+### Code
+an event listener listens for save button clicks and stores the inputed value and time into variables that are saved on local storage.
 
-* The URL of the deployed application.
+![image clickListen](https://user-images.githubusercontent.com/66426144/88464825-d3f44b00-ce8b-11ea-865e-259e2decdb7e.png)
+![image storage](https://user-images.githubusercontent.com/66426144/88465108-26366b80-ce8e-11ea-9012-946ae4bab8b6.png)
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+in the hourUpdater function, the current time is stored, time block hours are turned into integers and a loop is created to check whether or not a time block is in the past, present or future, calling on or removing classes to display the appropriate colors. User input which has been saved is pulled to display inside the time blocks. 
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+![image]()
+![image]()
+
+Lastyl, I made an interval function that is a timer that executes the hourUpdater function every 15 seconds so that the time check is kept up to date. 
+
+
+
+
+
+
+
+## Credits
+[W3Schools](https://w3schools.com)
+
